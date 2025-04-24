@@ -10,6 +10,7 @@ namespace ContaCorrente.ConsoleApp
             conta1.numero = 12;
             conta1.saldo = 1000;
             conta1.limite = 0;
+            conta1.movimentacoes = new Movimentacao[100];
 
             conta1.Sacar(200);
 
@@ -23,10 +24,15 @@ namespace ContaCorrente.ConsoleApp
             conta2.saldo = 300;
             conta2.numero = 13;
             conta2.limite = 0;
+            conta2.movimentacoes = new Movimentacao[100];
 
             conta1.TransferirPara(conta2, 400);
 
-            Console.WriteLine(conta1.saldo);
+            conta1.ExibirExtrato();
+
+            Console.WriteLine();
+
+            conta2.ExibirExtrato();
 
             Console.ReadLine();
         }
